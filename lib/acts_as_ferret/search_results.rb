@@ -6,6 +6,8 @@ module ActsAsFerret
     attr_reader :current_page, :per_page, :total_hits, :total_pages
     alias total_entries total_hits  # will_paginate compatibility
     alias page_count total_pages    # will_paginate backwards compatibility
+    alias limit_value total_hits    # kaminari compatibility
+    alias num_pages total_pages     # kaminari compatibility
 
     def initialize(results, total_hits, current_page = 1, per_page = nil)
       @results = results
